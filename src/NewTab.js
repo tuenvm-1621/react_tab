@@ -3,11 +3,17 @@ import Flatpickr from 'react-flatpickr';
 import {Japanese} from '../node_modules/flatpickr/dist/l10n/ja'
 import '../node_modules/flatpickr/dist/flatpickr.min.css';
 
+// import { render } from 'react-dom';
+
 export default props => {
   const [count, setCount] = useState(0);
   const [value, setVaue] = useState('')
   const { handleNewTab, label } = props;
   const [date, setDate] = useState(new Date());
+  // const container = {label: label, document: document.createElement(`div${label}`)};
+
+  // document.body.appendChild(container.document);
+
   const styles = {
     fontFamily: 'sans-serif',
     textAlign: 'center'
@@ -16,10 +22,7 @@ export default props => {
   const handleOnClick = () => {
     myRef.current.flatpickr.open();
   }
-  // const handleonChange = (e) => {
-  //   console.log(e)
-  //   debugger
-  // }
+
   return (
     <div>
       <h1>HomePage {label}</h1>
