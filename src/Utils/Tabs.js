@@ -4,7 +4,7 @@ import Tab from './Tab';
 
 export default props => {
   const {
-    children,
+    tabs,
     onClickTabItem,
     handleNewTab,
     onCloseTab,
@@ -13,11 +13,11 @@ export default props => {
 
   return (
     <div>
-      {children.length > 1 && (
+      {/* {tabs.length > 1 && ( */}
         <ol className='tab-list'>
-          {children.map(child => {
+          {tabs.map(child => {
             if (child) {
-              const { label } = child.props;
+              const { label } = child;
               return (
                 <Tab
                   activeTab={activeTab}
@@ -34,13 +34,6 @@ export default props => {
             +
           </li>
         </ol>
-      )}
-      <div className='tab-content'>
-        {children.map(child => {
-          if (!child || child.props.label !== activeTab) return undefined;
-          return child.props.children;
-        })}
-      </div>
     </div>
   );
 };
